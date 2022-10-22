@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ear Training App</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<title>Ear Training App</title>
 </head>
 <body>
-	<button id="button">Play</button>
+	<header id="header">
+		<div class="user-statistics" id="user-statistics">
+			<div class="row">
+				<div class="block">
+					<p data-i18n-key="accuracy" class="statistic-item">Accuracy</p>
+					<p class="statistic-value">97.08%</p>
+				</div>
+				<div class="block">
+					<p data-i18n-key="coins" class="statistic-item">Coins</p>
+					<p class="statistic-value">300.000</p>
+				</div>
+			</div>
 
-	<script src="./js/script.js"></script>
+			<div class="user-information" id="user-information">
+				<h1>Jonmuxu</h1>
+				<div class="level-bar">
+					<div class="progress"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="block">
+					<p data-i18n-key="times-played" class="statistic-item">Times Played</p>
+					<p class="statistic-value">3421</p>
+				</div>
+				<div class="block">
+					<p data-i18n-key="level" class="statistic-item">Level</p>
+					<p class="statistic-value">37</p>
+				</div>
+			</div>
+
+		</div>
+
+		<navbar id="navbar">
+			<div class="navbar-item">
+				<div class="circle" id="left-circle"></div>
+			</div>
+
+			<div class="navbar-item mini-user-statistics" id="mini-user-statistics">
+				<p>37</p>
+				<div class="level-bar">
+					<div class="progress"></div>
+				</div>
+			</div>
+
+			<div class="navbar-item">
+				<div class="circle" id="right-circle"></div>
+			</div>
+		</navbar>
+
+		<div class="down-arrow" id="down-arrow">
+			<p>300.000</p>
+		</div>
+
+	</header>
+
+	<main id="main">
+
+	</main>
+
+	<footer id="footer">
+		<div class="up-arrow" id="up-arrow">
+			<span class="material-icons" style="font-size: 50px;">keyboard_arrow_up</span>
+		</div>
+		<div class="minigames" id="minigames">
+			<div>Some test</div>
+			<div>Melodic Dictation</div>
+			<div>Chord progression</div>
+			<div>Pitch Practice</div>
+			<div>Melodic Dictation</div>
+			<div>Some test</div>
+			<div>Chord progression</div>
+			<div>Melodic Dictation</div>
+			<div>Another minigame</div>
+			<div>I don't know lol</div>
+		</div>
+	</footer>
+
+	<script type="module" src="./main.js"></script>
 </body>
 </html>
