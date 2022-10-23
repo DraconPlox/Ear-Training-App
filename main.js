@@ -29,6 +29,7 @@ const pattern = ["white", "black", "white", "black",
 
 let lastKeyPressed;
 let noteGuessed = false;
+let started = false;
 
 for (let i = 0; i < 12; i++) {
 	const key = document.createElement("div");
@@ -40,24 +41,25 @@ for (let i = 0; i < 12; i++) {
 	}
 
 	key.addEventListener("click", () => {
-		if (!noteGuessed) {
-			// first check to avoid switching to wrong guessed keys
-			if (!key.classList.contains("wrong")) {
-				if (lastKeyPressed != undefined) {
-					lastKeyPressed.classList.remove("selected");
+		if (started) {
+			if (!noteGuessed) {
+				// first check to avoid switching to wrong guessed keys
+				if (!key.classList.contains("wrong")) {
+					if (lastKeyPressed != undefined) {
+						lastKeyPressed.classList.remove("selected");
+					}
+
+					if (key == lastKeyPressed) {
+						key.classList.remove("selected");
+						lastKeyPressed = undefined;
+					} else {
+						key.classList.add("selected");
+						lastKeyPressed = key;
+					}
 				}
 
-				if (key == lastKeyPressed) {
-					key.classList.remove("selected");
-					lastKeyPressed = undefined;
-				} else {
-					key.classList.add("selected");
-					lastKeyPressed = key;
-				}
 			}
-
 		}
-
 	});
 
 	keyboard.append(key);
@@ -124,6 +126,7 @@ function nextRandomNote() {
 }
 
 play.addEventListener("click", () => {
+	started = true;
 	play.remove();
  	buttons.append(guess, repeat);
 
