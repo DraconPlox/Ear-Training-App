@@ -18,11 +18,27 @@ class Instrument {
 			for (const note of chord.notes) {
 				const audio = new Audio(`./assets/${this.timbre}/${note.name}-${note.register}.opus`);
 				audio.play();
+
+				const interval = setInterval(() => {
+					audio.volume -= 0.03;
+					if (audio.volume <= 0.03) {
+						clearInterval(interval);
+					}
+				}, 100);
+
 			}
 		} else {
 			const note = sound;
 			const audio = new Audio(`./assets/${this.timbre}/${note.name}-${note.register}.opus`);
 			audio.play();
+
+			const interval = setInterval(() => {
+				audio.volume -= 0.03;
+				if (audio.volume <= 0.03) {
+					clearInterval(interval);
+				}
+			}, 100);
+
 		}
 	}
 }
